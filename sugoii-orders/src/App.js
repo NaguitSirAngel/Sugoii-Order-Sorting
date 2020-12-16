@@ -1,24 +1,16 @@
-import {Route, BrowserRouter as Router, Switch, Link} from 'react-router-dom';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 import RecordOrders from './Pages/RecordPage/RecordPage';
 import OrderPage from './Pages/OrderPage/OrderPage'
+import SideNav from './SideNav/SideNav';
+import Content from './Content/Content';
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <Link to ="/" >Current Orders</Link>
-          </li>
-          <li>
-            <Link to ="/records" >Order Records</Link>
-          </li>
-        </ul>
-      </nav>
+      <SideNav/>
       <Switch>
-      <Route path="/records" component={RecordOrders}/>
-      <Route path="/" component={OrderPage}/>
+      <Content/>
       </Switch>
     </div>
     </Router>
